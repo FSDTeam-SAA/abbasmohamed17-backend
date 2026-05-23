@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { USER_DIVISION, USER_ROLE } from "./user.constant";
 
 const userValidationSchema = z.object({
   body: z.object({
@@ -14,6 +15,8 @@ const userValidationSchema = z.object({
     password: z.string({
       required_error: "Password is required",
     }),
+    role: z.nativeEnum(USER_ROLE).optional(),
+    division: z.nativeEnum(USER_DIVISION).optional(),
   }),
 });
 

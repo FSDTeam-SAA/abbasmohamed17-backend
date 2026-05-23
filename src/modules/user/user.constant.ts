@@ -1,4 +1,15 @@
 export const USER_ROLE = {
-  ADMIN: "admin",
-  USER: "user",
+  DIRECTOR: "DIRECTOR",
+  MANAGEMENT: "MANAGEMENT",
+  OPS_MANAGER: "OPS_MANAGER",
+  FLEET_MANAGER: "FLEET_MANAGER",
+  TRACKING: "TRACKING",
+  HR: "HR",
+  EMPLOYEE: "EMPLOYEE",
+} as const;
+
+export const USER_DIVISION = {
+  EMPTIES: "EMPTIES",
+  FULLS: "FULLS",
+  BOTH: "BOTH",
 } as const;

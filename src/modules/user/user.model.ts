@@ -2,6 +2,7 @@ import bcrypt from 'bcrypt';
 import { model, Schema } from 'mongoose';
 import config from '../../config';
 import { IUser, userModel } from './user.interface';
+import { USER_DIVISION, USER_ROLE } from './user.constant';
 
 const userSchema = new Schema<IUser>(
   {
@@ -39,8 +40,13 @@ const userSchema = new Schema<IUser>(
     },
     role: {
       type: String,
-      enum: ['user', 'admin'],
-      default: 'user',
+      enum: Object.values(USER_ROLE),
+      default: USER_ROLE.EMPLOYEE,
+    },
+    division: {
+      type: String,
+      enum: Object.values(USER_DIVISION),
+      required: false,
     },
     image: {
       public_id: {
