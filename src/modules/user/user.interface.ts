@@ -1,5 +1,5 @@
 import { Model } from "mongoose";
-import { USER_ROLE } from "./user.constant";
+import { USER_DIVISION, USER_ROLE } from "./user.constant";
 
 export interface IUser {
   _id: string;
@@ -12,7 +12,8 @@ export interface IUser {
   location: string;
   postalCode: string;
   dateOfBirth: Date;
-  role: string;
+  role: keyof typeof USER_ROLE;
+  division: keyof typeof USER_DIVISION;
   image: {
     public_id: string;
     url: string;
