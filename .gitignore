@@ -3,7 +3,6 @@ dist
 config.bat
 config.sh
 .qodo
-.vscode
 .idea
 .DS_Store
 logs
